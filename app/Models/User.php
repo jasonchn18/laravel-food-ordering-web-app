@@ -12,6 +12,15 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public $timestamps = false;
+
+    /**
+	 * The database table used by the model.
+	 *
+	 * @var string
+	 */
+	protected $table = 'user';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,6 +31,10 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
+    public function orders() {
+        return $this->hasMany(Order::class); 
+    }
 
     /**
      * The attributes that should be hidden for serialization.
