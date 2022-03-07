@@ -15,8 +15,8 @@ class Order extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->id();
-            $table->integer('userId');
-            $table->foreign('userId')->references('id')->on('user')->onDelete('cascade');
+            $table->integer('user_id');
+            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
             $table->dateTime('date');
             $table->string('type');
             $table->string('deliveryAddress');

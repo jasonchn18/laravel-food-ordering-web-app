@@ -4,8 +4,10 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+
 class FoodFactory extends Factory
 {
+
     /**
      * Define the model's default state.
      *
@@ -13,11 +15,12 @@ class FoodFactory extends Factory
      */
     public function definition()
     {
+        $this->faker->addProvider(new \FakerRestaurant\Provider\en_US\Restaurant($this->faker));
         return [
-            'name' => $this->faker->firstName(),
+            'name' => $this->faker->foodName(),
             'price' => $this->faker->numberBetween(5, 20),
             'description' => $this->faker->text(),
-            'type' => $this->faker->randomLetter(),
+            'type' => $this->faker->randomElement(['Western', 'Chinese', 'Japanese']),
             'picture' => $this->faker->image(),
         ];
     }

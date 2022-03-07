@@ -14,7 +14,7 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            'userID' => \App\Models\User::all()->random()->id,
+            'user_id' => \App\Models\User::all()->random()->id,
             'date' => $this->faker->date(),
             'type' => $this->faker->randomElement(['pickup', 'delivery']),
             'deliveryAddress' => $this->faker->address(),
