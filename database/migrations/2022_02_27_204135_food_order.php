@@ -29,6 +29,6 @@ class FoodOrder extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('food_order');
     }
 }

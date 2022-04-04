@@ -30,6 +30,6 @@ class Food extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('food');
     }
 }

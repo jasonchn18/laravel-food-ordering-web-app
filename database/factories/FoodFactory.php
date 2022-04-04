@@ -19,7 +19,7 @@ class FoodFactory extends Factory
         return [
             'name' => $this->faker->foodName(),
             'price' => $this->faker->numberBetween(5, 20),
-            'description' => $this->faker->text(),
+            'description' => $this->faker->sentence(6, true),
             'type' => $this->faker->randomElement(['Western', 'Chinese', 'Japanese']),
             'picture' => $this->faker->image(),
         ];
