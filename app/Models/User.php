@@ -26,6 +26,8 @@ class User extends Authenticatable
         'address',
     ];
 
+    protected $guard = 'isAdmin';
+
     /**
      * The attributes that should be hidden for serialization.
      *
