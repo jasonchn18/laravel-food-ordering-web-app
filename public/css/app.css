@@ -561,7 +561,8 @@ progress {
 
 .list-inline {
   padding-left: 0;
-  list-style: none;
+  list-style:none;
+ 
 }
 
 .list-inline-item {
@@ -4571,11 +4572,20 @@ textarea.form-control-lg {
 
 .card-footer {
   padding: 0.5rem 1rem;
-  background-color: rgba(0, 0, 0, 0.03);
+  /* background-color: rgba(0, 0, 0, 0.03);*/
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.202);
+  color: grey;
+  text-align: center;
 }
 .card-footer:last-child {
   border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+  display: inline-block;
+ 
 }
 
 .card-header-tabs {
@@ -11864,9 +11874,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .grid {
   display: grid;
-}
-.contents {
-  display: contents;
 }
 .hidden {
   display: none;

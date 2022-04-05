@@ -39,19 +39,19 @@
                     </ul> -->
                     <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
-                    <a class="nav-link" href="home">Home<span class="sr-only"></span></a>
-                    </li>
-                     <!-- disabled link for spacing -->
-                    <li class="nav-item disabled">
-                    <a class="nav-link" href=""> <span class="sr-only"></span></a>
-                    </li>
-
-                    <li class="nav-item active">
-                    <a class="nav-link" href="order">Order <span class="sr-only"></span></a>
+                    <a class="nav-link" href="home">Home<span class="sr-only"></a>
                     </li>
                     <!-- disabled link for spacing -->
                     <li class="nav-item disabled">
-                    <a class="nav-link" href=""> <span class="sr-only"></span></a>
+                    <a class="nav-link" href=""><span class="sr-only"></a>
+                    </li>
+
+                    <li class="nav-item active">
+                    <a class="nav-link" href="order">Order <span class="sr-only"></a>
+                    </li>
+                    <!-- disabled link for spacing -->
+                    <li class="nav-item disabled">
+                    <a class="nav-link" href=""><span class="sr-only"></a>
                     </li>
                     <!-- Right Side Of Navbar -->
                    
@@ -61,12 +61,17 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
+                                  <!-- disabled link for spacing -->
+                                <li class="nav-item disabled">
+                                <a class="nav-link" href=""><span class="sr-only"></a>
+                                </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
+                               
                             @endif
                         @else
                             <li class="nav-item dropdown">
