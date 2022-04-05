@@ -172,4 +172,6 @@
             $('#remove_form').attr('action', '/order/' + order_id + '/' + food_id);
         }
     </script>
+    <x-footer/>
 @endsection
+
