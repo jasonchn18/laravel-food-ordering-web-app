@@ -17,11 +17,11 @@ class FoodFactory extends Factory
     {
         $this->faker->addProvider(new \FakerRestaurant\Provider\en_US\Restaurant($this->faker));
         return [
-            'name' => $this->faker->foodName(),
+            'name' => $this->faker->unique()->foodName(),
             'price' => $this->faker->numberBetween(5, 20),
             'description' => $this->faker->sentence(6, true),
             'type' => $this->faker->randomElement(['Western', 'Chinese', 'Japanese']),
-            'picture' => $this->faker->image(),
+            'picture' => $this->faker->imageUrl(640, 480),
         ];
     }
 }

@@ -8,7 +8,7 @@ class FoodController extends Controller
 {
     public function index() {
         $food = Food::all();
-        return view('food.index', ['food' => $food]);
+        return view('your blade file', ['food' => $food]);
     }
 
     public function destroy(Food $food) {
@@ -23,6 +23,6 @@ class FoodController extends Controller
 
     public function update(Food $food)
     {
-        Food::where('id', $food['id'])->update(['name'=>'Updated title']);
+        Food::where('id', $food['id'])->update(['name'=>'Updated title',]);
     }
 }
