@@ -32,9 +32,9 @@
           <label for="food type" class="block text-lg font-medium text-gray-700">Food type</label>
           <div>
           <select name="type" id="type" class="flex justify-center mt-1 flex rounded-md shadow-sm p-1 border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-lg border-gray-300">>
-            <option value="western">Western</option>
-            <option value="chinese">Chinese</option>
-            <option value="japanese">Japanese</option>
+            <option value="Western">Western</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Japanese">Japanese</option>
           </select>
         </div>
 

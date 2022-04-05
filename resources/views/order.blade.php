@@ -24,7 +24,7 @@
                     @foreach ($order->food as $food)
                     <input type="hidden" id="order_id" value={{$order->id}} />
                     <input type="hidden" id="food_id" value={{$food->id}} />
-                    <div class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-full hover:bg-gray-100">
+                    <div class="flex flex-col items-center -white rounded-lg border shadow-md md:flex-row md:max-w-full hover:bg-gray-100">
                         <div class="flex rounded-lg">
                             <img class="flex h-28 w-44 object-fill rounded-lg" src="{{$food->picture}}" alt="">
                         </div>
