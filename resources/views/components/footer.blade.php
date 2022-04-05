@@ -1,6 +1,6 @@
 <div>
     <div >
-        <div class="footer card-footer">
+        <div class="footer card-footer text-center">
        <!-- <div class="row-cols-sm-2"> -->
            <h2>Online Food Order Management System</h2>
                 <h1>About the company</h1>
