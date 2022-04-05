@@ -4,15 +4,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"> {{ isset($url) ? ucwords($url) : ""}}
+                <div class="card-header"> 
                     {{ __('Register') }}
                 </div>
                 <div class="card-body">
-                    @isset($url)
-                    <form method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
-                        @else
+                   
                         <form method="POST" action="{{ route('register') }}" arialabel="{{ __('Register') }}">
-                            @endisset
+                        
                             @csrf
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label
