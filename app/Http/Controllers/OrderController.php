@@ -11,4 +11,8 @@ class OrderController extends Controller
     {
         $order->save();
     }
+
+    public function addToOrder(Order $order)
+    {
+    }
 }
