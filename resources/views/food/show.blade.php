@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="px-3 py-2 flex flex-col justify-center items-center h-full">
-    <div class="flex flex-row leading-normal border shadow-md rounded-lg w-8/12 items-center">
+    <div class="flex flex-row leading-normal border shadow-md rounded-lg w-8/12 items-center h-full">
         <div class="h-full">
             <img src="{{ $food['picture'] }}" class='object-fill xl:rounded-l-lg h-full'>
         </div>
-        <div class="flex flex-col p-4 self-start">
+        <div class="flex flex-col p-4 self-start h-full">
             <h1 class="font-bold font-sans text-2xl leading-8">{{ $food['name'] }}</h1>
             <h1 class="font-semibold font-sans text-lg text-red-500 leading-8">RM {{ $food['price'] }}</h1>
             <h1 class="font-serif text-sm text-gray-600 leading-7">{{ $food['description'] }}</h1>
