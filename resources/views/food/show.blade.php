@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('content')
-<div class="px-3 py-2 flex flex-col justify-center items-center h-full">
-    <div class="flex flex-row leading-normal border shadow-md rounded-lg w-8/12 items-center h-full">
+<div class="px-3 py-2 flex flex-col justify-center items-center">
+    <div class="flex flex-row leading-normal border shadow-md rounded-lg w-8/12 items-center bg-white">
         <div class="h-full">
             <img src="{{ $food['picture'] }}" class='object-fill xl:rounded-l-lg h-full'>
         </div>
-        <div class="flex flex-col p-4 self-start h-full">
+        <div class="flex flex-col p-4 self-start ">
             <h1 class="font-bold font-sans text-2xl leading-8">{{ $food['name'] }}</h1>
             <h1 class="font-semibold font-sans text-lg text-red-500 leading-8">RM {{ $food['price'] }}</h1>
             <h1 class="font-serif text-sm text-gray-600 leading-7">{{ $food['description'] }}</h1>
-            <div class="pt-3 flex flex-col">
+            <div class="pt-3 flex flex-col ">
                 <div>
                 <h1 class="font-sans text-sm text-gray-900 leading-8">Quantity</h1>
                     <div class="inline-flex rounded-md border-2">
@@ -18,7 +18,7 @@
                         <button class="py-2 px-3 font-bold border-l-2">+</button>
                     </div>
                 </div>
-                <button class="p-2">Add to Order</button>
+                <button class="p-2 mt-4 bg-blue-600 hover:text-blue-600 text-neutral-50 rounded-md hover:bg-white border-2 border-blue-600 ">Add to Order</button>
             </div>
 
         </div>
