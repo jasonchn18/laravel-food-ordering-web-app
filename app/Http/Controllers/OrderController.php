@@ -22,19 +22,13 @@ class OrderController extends Controller
     {
         $user_id = Auth::id();
         $orders = Order::where('user_id', $user_id)->get();
-        // dd($orders[0]->id);
-        // dd($orders[0]->food);
-        // dd($order->food());
         return view('order', ['orders' => $orders]);
     }
 
     public function destroy($order_id, $food_id)
     {
         $order = Order::findOrFail($order_id);
-        // dd($order_id, $food_id);
         $order->food()->detach($food_id);
-        // return 204; // 204 is successful delete status code
-        // $post->delete();
         return redirect('/order');
     }
 }

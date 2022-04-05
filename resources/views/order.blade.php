@@ -1,14 +1,5 @@
 
 @extends('layouts.app')
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
 
 @section('content')
     <h1 class="px-4 pt-1 pb-3 text-3xl font-bold">
@@ -38,7 +29,7 @@
                         </div>
                         <div class="flex flex-col place-content-center px-4 py-3 leading-normal w-4/6">
                                 <h5 class="flex mb-2 text-2xl font-bold tracking-tight text-gray-900"> {{$food->name}} </h5>
-                                <p class="flex font-normal text-gray-700"> {{$food->pivot->quantity}} </p>
+                                <p class="flex font-normal text-gray-700"> Quantity: {{$food->pivot->quantity}} </p>
                         </div>
                         <div class="flex justify-center leading-normal w-1/6">
                                 <button onclick="remove_form_action({{$order->id}}, {{$food->id}})" type="button" class="openRemoveModal text-red-700 font-semibold bg-inherit border-red-500 rounded hover:text-white hover:bg-red-500 hover:border-transparent py-1 px-3 border-2">
@@ -80,7 +71,7 @@
                     </div>
                 </div>
                 <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <form name="remove_form" id="remove_form" method="POST" action="/order/{{$order->id}}/{{$food->id}}">
+                    <form name="remove_form" id="remove_form" method="POST">
                         @csrf
                         @method('delete')
                         <button type="submit" class="closeRemoveModal w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"> Confirm </button>
