@@ -11,6 +11,11 @@ class FoodController extends Controller
         return view('your blade file', ['food' => $food]);
     }
 
+    public function show($id) {
+        $food = Food::find($id);
+        return view('food.show', ['food' => $food]);
+    }
+
     public function destroy(Food $food) {
         $food->delete();
         return redirect('/food/index');

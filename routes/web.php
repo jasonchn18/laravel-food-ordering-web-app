@@ -16,6 +16,7 @@ Route::view('order', 'order');
 
 // food routes with policy
 Route::get('/food/show', [FoodController::class, 'index']);
+Route::get('/food/{food}', [FoodController::class, 'show']);
 Route::post('/food/create', [FoodController::class, 'create']);
 Route::put('/food/{food}', [FoodController::class, 'update']);
 Route::delete('/food/{food}', [FoodController::class, 'destroy']);
