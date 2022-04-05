@@ -9,13 +9,18 @@ use Illuminate\Support\Facades\Auth;
 
 Route::view('/', 'welcome');
 Route::view('/home', 'home');
+Route::view('/addfood', 'food.addfood');
 Auth::routes();
 
 Route::get('logout', [LoginController::class,'logout']);
 
 // food routes with policy
+<<<<<<< Updated upstream
 Route::get('/food/show', [FoodController::class, 'index']);
 Route::get('/food/{food}', [FoodController::class, 'show']);
+=======
+Route::get('/food/viewfood', [FoodController::class, 'index']);
+>>>>>>> Stashed changes
 Route::post('/food/create', [FoodController::class, 'create']);
 Route::put('/food/{food}', [FoodController::class, 'update']);
 Route::delete('/food/{food}', [FoodController::class, 'destroy']);

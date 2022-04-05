@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class FoodController extends Controller
 {
     public function index() {
-        $food = Food::all();
-        return view('your blade file', ['food' => $food]);
+        $foods = Food::paginate(10);
+        return view('food.viewfood',  ['foods'=> $foods]);
     }
 
     public function show($id) {
@@ -16,17 +16,18 @@ class FoodController extends Controller
         return view('food.show', ['food' => $food]);
     }
 
-    public function destroy(Food $food) {
+    public function destroy(Request $food) {
         $food->delete();
-        return redirect('/food/index');
+        return redirect('/food/addfood');
     }
 
-    public function create(Food $food)
+    public function create(Request $food)
     {
-        $food->save();
+        Food::create($food->all());
+        return redirect('/food/addfood');
     }
 
-    public function update(Food $food)
+    public function update(Request $food)
     {
         Food::where('id', $food['id'])->update(['name'=>'Updated title',]);
     }
