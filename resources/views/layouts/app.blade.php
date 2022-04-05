@@ -24,7 +24,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="min-h-screen">
+    <div id="app" class="min-h-screen flex flex-col justify-between">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -116,6 +116,7 @@
         <main class="py-4 h-full">
             @yield('content')
         </main>
+        <x-footer/>
     </div>
 </body>
 </html>
