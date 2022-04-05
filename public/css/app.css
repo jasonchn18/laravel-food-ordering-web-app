@@ -11949,8 +11949,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-8\/12 {
   width: 66.666667%;
 }
-<<<<<<< Updated upstream
-=======
 .w-1 {
   width: 0.25rem;
 }
@@ -11960,7 +11958,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-6\/12 {
   width: 50%;
 }
->>>>>>> Stashed changes
 .max-w-md {
   max-width: 28rem;
 }
@@ -11973,8 +11970,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-shrink-0 {
   flex-shrink: 0;
 }
-<<<<<<< Updated upstream
-=======
 .table-auto {
   table-layout: auto;
 }
@@ -11989,7 +11984,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
->>>>>>> Stashed changes
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -12036,10 +12030,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-between {
   justify-content: space-between;
 }
-<<<<<<< Updated upstream
-.self-start {
-  align-self: flex-start;
-=======
 .gap-6 {
   gap: 1.5rem;
 }
@@ -12050,7 +12040,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .self-center {
   align-self: center;
->>>>>>> Stashed changes
+}
+.self-start {
+  align-self: flex-start;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -12160,10 +12152,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
@@ -12233,9 +12221,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .px-5 {
   padding-left: 1.25rem;
@@ -12249,15 +12237,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-<<<<<<< Updated upstream
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-=======
+}
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
->>>>>>> Stashed changes
 }
 .pt-1 {
   padding-top: 0.25rem;
