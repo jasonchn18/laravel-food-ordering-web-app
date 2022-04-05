@@ -45,6 +45,9 @@
     </div>
     @endforeach
 
+    {{-- Just for some spacing before the end of page (footer) --}}
+    <div class="py-10"></div>
+
     <!-- Remove item modal -->
     <div class="invisible flex h-screen overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="remove-modal">
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
@@ -169,4 +172,5 @@
             $('#remove_form').attr('action', '/order/' + order_id + '/' + food_id);
         }
     </script>
+    <x-footer/>
 @endsection
