@@ -12024,15 +12024,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .place-content-center {
   place-content: center;
 }
-.content-center {
-  align-content: center;
-}
-.content-start {
-  align-content: flex-start;
-}
-.items-start {
-  align-items: flex-start;
-}
 .items-center {
   align-items: center;
 }
