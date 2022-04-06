@@ -12,7 +12,7 @@
         <div class="flex flex-row p-4 leading-normal border shadow-md hover:bg-gray-100">
             <div class="p-2 w-1/5">
                 <p> Order ID: <span class="font-semibold"> {{$order->id}} </span> </p>
-                <p> Type: <span class="font-semibold"> {{$order->type}} </span> </p>
+                <p> Type: <span class="font-semibold capitalize"> {{$order->type}} </span> </p>
                 <p> Status: <span class="font-semibold"> Unpaid </span> </p>
                 <br>
                 <button class="openPaymentModal bg-green-500 hover:bg-green-400 text-white font-semibold py-2 px-6 border-b-4 border-green-700 hover:border-green-500 rounded">
