@@ -11905,6 +11905,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-8 {
   height: 2rem;
 }
+.h-\[40vh\] {
+  height: 40vh;
+}
+.h-\[50vh\] {
+  height: 50vh;
+}
+.h-\[60vh\] {
+  height: 60vh;
+}
+.h-\[70vh\] {
+  height: 70vh;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -11968,6 +11980,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-shrink-0 {
   flex-shrink: 0;
 }
+.flex-grow {
+  flex-grow: 1;
+}
 .border-collapse {
   border-collapse: collapse;
 }
@@ -12022,6 +12037,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-between {
   justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
 }
 .gap-6 {
   gap: 1.5rem;
@@ -12166,6 +12184,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .stroke-green-600 {
   stroke: #16a34a;
+}
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .object-fill {
   -o-object-fit: fill;
@@ -12528,6 +12550,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .focus\:ring-offset-2:focus {
   --tw-ring-offset-width: 2px;
+}
+.disabled\:bg-slate-100:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+.disabled\:bg-slate-500:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+.disabled\:bg-slate-200:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+.disabled\:text-slate-500:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+.disabled\:text-slate-100:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(241 245 249 / var(--tw-text-opacity));
 }
 @media (prefers-color-scheme: dark) {
 

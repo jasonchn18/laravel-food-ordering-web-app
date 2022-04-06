@@ -29,3 +29,4 @@ Route::view('cart', 'cart');
 // Order routes
 Route::get('order', [OrderController::class, 'show']);
 Route::delete('/order/{order_id}/{food_id}', [OrderController::class, 'destroy']);
+Route::post('/addToCart', [OrderController::class, 'updateCart']);

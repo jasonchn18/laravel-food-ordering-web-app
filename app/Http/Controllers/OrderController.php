@@ -31,4 +31,9 @@ class OrderController extends Controller
         $order->food()->detach($food_id);
         return redirect('/order');
     }
+
+    public function updateCart(Request $food)
+    {
+        return '/food/show';
+    }
 }
