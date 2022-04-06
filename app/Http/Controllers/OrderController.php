@@ -6,6 +6,7 @@ use App\Models\Food;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
@@ -32,8 +33,15 @@ class OrderController extends Controller
         return redirect('/order');
     }
 
-    public function updateCart(Request $food)
+    public function updateCart(Request $req)
     {
+        $order = session()->get('cart');
+        $food = Food::findOrFail($req['id']);
+        $order->food()->attach($food, ['quantity' => $req['quantity']]);
+        $order->deliveryAddress = 'aaa';
+        Session::put('cart', $order);
+        session()->flash('success', 'added to cart');
+
         return '/food/show';
     }
 }

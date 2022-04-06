@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class FoodController extends Controller
 {
@@ -15,6 +19,13 @@ class FoodController extends Controller
 
     public function adminIndex()
     {
+        $order = Order::create([
+            'user_id' => Auth::id(),
+            'date' => Carbon::now(),
+            'deliveryAddress' => 'bb',
+            'type' => ''
+        ]);   
+        Session::put('cart', $order);
         $foods = Food::paginate(10);
         return view('food.viewfood',  ['foods' => $foods]);
     }
