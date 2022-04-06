@@ -35,11 +35,20 @@ class OrderController extends Controller
 
     public function updateCart(Request $req)
     {
-        $order = session()->get('cart');
-        $food = Food::findOrFail($req['id']);
-        $order->food()->attach($food, ['quantity' => $req['quantity']]);
-        $order->deliveryAddress = 'aaa';
-        Session::put('cart', $order);
+        // $order = session()->get('cart');
+        // $order = $req->id;
+        // session()->forget('cart');
+        $item = [
+            'id' => $req->id,
+            'name' => $req->name,
+            'price' => $req->price,
+            'picture' => $req->picture,
+            'quantity' => $req->quantity,
+        ];
+        // $food = Food::findOrFail($req['id']);
+        // $order->food()->attach($food, ['quantity' => $req['quantity']]);
+        // $order->deliveryAddress = 'aaa';
+        Session::push('cart', $item);
         session()->flash('success', 'added to cart');
 
         return '/food/show';
