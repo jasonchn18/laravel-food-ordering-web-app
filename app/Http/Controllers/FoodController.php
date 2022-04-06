@@ -1,33 +1,39 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Food;
 use Illuminate\Http\Request;
 
 class FoodController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $foods = Food::paginate(10);
-        return view('food.viewfood',  ['foods'=> $foods]);
+        return view('food.home',  ['foods' => $foods]);
     }
 
-    public function adminIndex() {
+    public function adminIndex()
+    {
         $foods = Food::paginate(10);
-        return view('food.viewfood',  ['foods'=> $foods]);
+        return view('food.viewfood',  ['foods' => $foods]);
     }
 
-    public function show($id) {
+    public function show($id)
+    {
         $food = Food::findOrFail($id);
         return view('food.show', ['food' => $food]);
     }
 
-    public function getForUpdate($id) {
+    public function getForUpdate($id)
+    {
         $food = Food::findOrFail($id);
         return view('food.updatefood', ['food' => $food]);
     }
 
-    public function destroy($id) {
-        $food= Food::findOrFail($id);
+    public function destroy($id)
+    {
+        $food = Food::findOrFail($id);
         $food->delete();
         return redirect('/food/viewfood');
     }
@@ -41,11 +47,11 @@ class FoodController extends Controller
     public function update(Request $food, $id)
     {
         Food::where('id', $id)->update([
-            'name'=>$food['name'],
-            'description'=>$food['description'],
-            'price'=>$food['price'],
-            'type'=>$food['type'],
-            'picture'=>$food['picture'],
+            'name' => $food['name'],
+            'description' => $food['description'],
+            'price' => $food['price'],
+            'type' => $food['type'],
+            'picture' => $food['picture'],
         ]);
         return redirect('/food/viewfood');
     }
