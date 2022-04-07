@@ -9,34 +9,33 @@
 
 @section('content')
     <h1 class="px-4 pt-1 pb-3 text-3xl font-bold">
-        My Cart
+        <div class="flex flex-row">
+            <span class="mr-5 self-center"> My Cart </span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 self-center" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+        </div>
     </h1>
-    {{-- @foreach (session('cart') as $item)
-        {{$item['id']}}
-        {{$item['name']}}
-        {{$item['quantity']}}
-        <br>
-    @endforeach --}}
 
     {{-- Cart --}}
-    @foreach (session('cart') as $item)
+    @foreach (session('cart') as $food)
     <div class="px-3 py-2">
         <div class="flex flex-row p-4 leading-normal border shadow-md hover:bg-gray-100">
             <div class="w-full">
                 <div class="flex flex-col justify-between">
                     <div class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-full hover:bg-gray-100">
                         <div class="flex rounded-lg">
-                            <img class="flex h-28 w-44 object-fill rounded-lg" src="{{$item['picture']}}" alt="">
+                            <img class="flex h-28 w-44 object-fill rounded-lg" src="{{$food['picture']}}">
                         </div>
                         <div class="flex flex-col place-content-center px-4 py-3 leading-normal w-4/6">
-                                <h5 class="flex mb-2 text-2xl font-bold tracking-tight text-gray-900"> {{$item['name']}} </h5>
-                                <p class="flex font-normal text-gray-700"> Quantity: {{$item['quantity']}} </p>
-                                <p class="flex font-normal text-gray-700"> Price: RM{{$item['price']*$item['quantity']}}.00 </p>
+                            <h5 class="flex mb-2 text-2xl font-bold tracking-tight text-gray-900"> {{$food['name']}} </h5>
+                            <p class="flex font-normal text-gray-700"> Quantity: <b>&nbsp;{{$food['quantity']}}</b> </p>
+                            <p class="flex font-normal text-gray-700"> Price: <b>&nbsp;RM{{$food['price']*$food['quantity']}}.00 &ensp;</b> <span class="opacity-60"> [RM{{$food['price']}}.00 per unit] <span> </p>
                         </div>
                         <div class="flex justify-center leading-normal w-1/6">
-                                <button onclick="" type="button" class="openRemoveModal text-red-700 font-semibold bg-inherit border-red-500 rounded hover:text-white hover:bg-red-500 hover:border-transparent py-1 px-3 border-2">
-                                    <span> Remove </span>
-                                </button>
+                            <button onclick="remove_form_action({{$food['id']}})" type="button" class="openRemoveModal text-red-700 font-semibold bg-inherit border-red-500 rounded hover:text-white hover:bg-red-500 hover:border-transparent py-1 px-3 border-2">
+                                <span> Remove </span>
+                            </button>
                         </div>
                     </div>
                     <div class="p-1"></div>
@@ -72,7 +71,11 @@
                     </div>
                 </div>
                 <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button type="submit" class="closeRemoveModal w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"> Confirm </button>
+                    <form name="remove_form" id="remove_form" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="closeRemoveModal w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"> Confirm </button>
+                    </form>
                     <button type="button" class="closeRemoveModal w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-inherit text-base font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"> Cancel </button>
                 </div>
             </div>
@@ -87,6 +90,15 @@
             $('.closeRemoveModal').on('click', function(e){
                 $('#remove-modal').addClass('invisible');
             });
+            $('.openOrderModal').on('click', function(e){
+                $('#order-modal').removeClass('invisible');
+            });
+            $('.closeOrderModal').on('click', function(e){
+                $('#order-modal').addClass('invisible');
+            });
         });
+        function remove_form_action(food_id) {
+            $('#remove_form').attr('action', '/cart/remove/' + food_id);
+        }
     </script>
 @endsection

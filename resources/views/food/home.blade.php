@@ -1,10 +1,8 @@
 <?php
-    // session()->forget('cart');
     // Initialize cart array in session
     if(session('cart') == null) {
         session()->put('cart', array());
     }
-    // dd(session('cart'));
 ?>
 
 @extends('layouts.app')
