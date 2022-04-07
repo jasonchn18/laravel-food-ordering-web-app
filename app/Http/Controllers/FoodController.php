@@ -19,13 +19,13 @@ class FoodController extends Controller
 
     public function adminIndex()
     {
-        $order = Order::create([
-            'user_id' => Auth::id(),
-            'date' => Carbon::now(),
-            'deliveryAddress' => 'bb',
-            'type' => ''
-        ]);   
-        Session::put('cart', $order);
+        // $order = Order::create([
+        //     'user_id' => Auth::id(),
+        //     'date' => Carbon::now(),
+        //     'deliveryAddress' => 'bb',
+        //     'type' => ''
+        // ]);   
+        // Session::put('cart', $order);
         $foods = Food::paginate(10);
         return view('food.viewfood',  ['foods' => $foods]);
     }
