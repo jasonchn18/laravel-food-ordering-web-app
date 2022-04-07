@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Food;
 use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -22,7 +23,19 @@ class OrderController extends Controller
     public function show()
     {
         $user_id = Auth::id();
-        $orders = Order::where('user_id', $user_id)->get();
+        $orders = Order::where('user_id', $user_id)->orderBy('date', 'desc')->get();
+        
+        // To get total amount for each order:
+        foreach($orders as $order) {
+            $total = 0.0;
+
+            foreach($order->food as $food) {
+                $total += $food->price * $food->pivot->quantity;
+            }
+            
+            $order->total = $total;
+        }
+
         return view('order', ['orders' => $orders]);
     }
 
@@ -117,5 +130,23 @@ class OrderController extends Controller
         Session::put('cart', $new_cart_arr);
 
         return redirect('/cart');
+    }
+
+    public function placeOrder(Request $req) {
+        $order = Order::create([
+            'user_id' => Auth::id(),
+            'date' => Carbon::now(),
+            'type' => $req->type,
+            'deliveryAddress' => $req->address,
+        ]);
+        
+        $cart_arr = Session::pull('cart');  // pull: get the value and removes it from the session
+        foreach ($cart_arr as $key => $value) {
+            // $key = 0,1,2,...,n   $value = 'id','name','price',...
+            $food = Food::findOrFail($value['id']);
+            $order->food()->attach($food, ['quantity' => $value['quantity']]);
+        }
+        
+        return redirect('/order');
     }
 }

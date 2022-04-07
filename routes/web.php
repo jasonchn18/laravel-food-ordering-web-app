@@ -32,3 +32,4 @@ Route::delete('/order/{order_id}/{food_id}', [OrderController::class, 'destroy']
 Route::view('cart', 'cart');
 Route::post('/addToCart', [OrderController::class, 'updateCart']);
 Route::delete('/cart/remove/{food_id}', [OrderController::class, 'removeFromCart']);
+Route::post('/cart/placeorder', [OrderController::class, 'placeOrder']);

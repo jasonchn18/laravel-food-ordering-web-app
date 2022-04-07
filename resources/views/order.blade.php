@@ -3,47 +3,40 @@
 
 @section('content')
     <h1 class="px-4 pt-1 pb-3 text-3xl font-bold">
-        My Orders
+        My Order History
     </h1>
 
     {{-- Orders --}}
     @foreach ($orders as $order)
-    <div class="px-3 py-2">
-        <div class="flex flex-row p-4 leading-normal border shadow-md hover:bg-gray-100">
-            <div class="p-2 w-1/5">
-                <p> Order ID: <span class="font-semibold"> {{$order->id}} </span> </p>
-                <p> Type: <span class="font-semibold capitalize"> {{$order->type}} </span> </p>
-                <p> Status: <span class="font-semibold"> Unpaid </span> </p>
-                <br>
-                <button class="openPaymentModal bg-green-500 hover:bg-green-400 text-white font-semibold py-2 px-6 border-b-4 border-green-700 hover:border-green-500 rounded">
-                  <span class="drop-shadow"> Make Payment </span>
-                </button>
-            </div>
-            <div class="w-4/5">
-                <div class="flex flex-col justify-between">
-                    @foreach ($order->food as $food)
-                    <input type="hidden" id="order_id" value={{$order->id}} />
-                    <input type="hidden" id="food_id" value={{$food->id}} />
-                    <div class="flex flex-col items-center -white rounded-lg border shadow-md md:flex-row md:max-w-full hover:bg-gray-100">
-                        <div class="flex rounded-lg">
-                            <img class="flex h-28 w-44 object-fill rounded-lg" src="{{$food->picture}}" alt="">
-                        </div>
-                        <div class="flex flex-col place-content-center px-4 py-3 leading-normal w-4/6">
-                                <h5 class="flex mb-2 text-2xl font-bold tracking-tight text-gray-900"> {{$food->name}} </h5>
-                                <p class="flex font-normal text-gray-700"> Quantity: {{$food->pivot->quantity}} </p>
-                        </div>
-                        <div class="flex justify-center leading-normal w-1/6">
-                                <button onclick="remove_form_action({{$order->id}}, {{$food->id}})" type="button" class="openRemoveModal text-red-700 font-semibold bg-inherit border-red-500 rounded hover:text-white hover:bg-red-500 hover:border-transparent py-1 px-3 border-2">
-                                    <span> Remove </span>
-                                </button>
-                        </div>
+        <div class="px-3 py-2">
+            <div class="flex flex-row p-4 leading-normal border shadow-md hover:bg-gray-100">
+                <div class="p-2 w-1/5">
+                    <p class="mb-1"> Order ID: <span class="font-semibold"> {{$order->id}} </span> </p>
+                    <p class="mb-1"> Date: <span class="font-semibold"> {{date_format(date_create($order->date), 'jS F Y')}} </span> </p>
+                    <p class="mb-1"> Type: <span class="font-semibold capitalize"> {{$order->type}} </span> </p>
+                    <p class="mb-1"> Total: <span class="font-semibold capitalize"> RM{{number_format((float)$order->total, 2, '.', '')}} </span> </p>
+                </div>
+                <div class="w-4/5">
+                    <div class="flex flex-col justify-between">
+                        @foreach ($order->food as $food)
+                            <input type="hidden" id="order_id" value={{$order->id}} />
+                            <input type="hidden" id="food_id" value={{$food->id}} />
+                            <div class="flex flex-col items-center -white rounded-lg border shadow-md md:flex-row md:max-w-full hover:bg-gray-100">
+                                <div class="flex rounded-lg">
+                                    <img class="flex h-28 w-44 object-fill rounded-lg" src="{{$food->picture}}" alt="">
+                                </div>
+                                <div class="flex flex-col place-content-center px-4 py-3 leading-normal w-4/6">
+                                        <h5 class="flex mb-2 text-2xl font-bold tracking-tight text-gray-900"> {{$food->name}} </h5>
+                                        <p class="flex font-normal text-gray-700"> Quantity: <b>&nbsp;{{$food->pivot->quantity}}</b> </p>
+                                        <p class="flex font-normal text-gray-700"> Price: <b>&nbsp;RM{{number_format((float)($food->price*$food->pivot->quantity), 2, '.', '')}} &ensp;</b> <span class="opacity-60"> [RM{{number_format((float)($food->price), 2, '.', '')}} per unit] <span> </p>
+                                </div>
+                            </div>
+                            <div class="p-1"></div>
+                        @endforeach
                     </div>
-                    <div class="p-1"></div>
-                    @endforeach
                 </div>
             </div>
         </div>
-    </div>
     @endforeach
 
     {{-- Just for some spacing before the end of page (footer) --}}
