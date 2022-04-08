@@ -44,11 +44,11 @@
 
         <div class="p-8 m-8 border-solid border-2 border-indigo-600 rounded-md text-center">
             <a class="nav-link" href="../food/{{$data['id']}}">
-                <br>{{$data['name']}}
+                <p class="text-black text-xl font-bold">{{$data['name']}}</p>
                 <section class="hero container max-w-screen-lg mx-auto pb-10 flex justify-center">
                     <img src=" {{$data['picture']}}" alt="screenshot" heigt="300" width="300">
                 </section>
-                RM {{$data['price']}}
+                <p class="text_black">RM {{$data['price']}}</p>
             </a>
         </div>
 

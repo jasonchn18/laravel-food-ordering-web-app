@@ -13,7 +13,7 @@ Route::get('/', [FoodController::class, 'index']);
 Route::view('/addfood', 'food.addfood');
 Auth::routes();
 
-Route::get('logout', [LoginController::class,'logout']);
+Route::get('logout', [LoginController::class, 'logout']);
 
 // food routes with policy
 Route::get('/updatefood/{food}', [FoodController::class, 'getForUpdate']);

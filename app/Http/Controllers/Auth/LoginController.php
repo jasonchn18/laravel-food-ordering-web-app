@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -37,7 +38,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
         // $this->middleware('guest:admin')->except('logout');
     }
-    
+
     // public function showAdminLoginForm()
     // {
     //     return view('auth.login', ['url' => 'admin']);
@@ -50,5 +51,5 @@ class LoginController extends Controller
     // }
     //     return back()->withInput($request->only('email', 'remember'));
     // }
-    
+
 }
