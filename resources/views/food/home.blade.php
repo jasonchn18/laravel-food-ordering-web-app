@@ -55,5 +55,8 @@
 
         @endforeach
     </div>
+    <span class="p-5">
+        {{$foods -> links()}}
+    </span>
 </div>
 @endsection

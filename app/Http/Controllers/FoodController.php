@@ -13,7 +13,7 @@ class FoodController extends Controller
 {
     public function index()
     {
-        $foods = Food::paginate(10);
+        $foods = Food::paginate(12);
         return view('food.home',  ['foods' => $foods]);
     }
 

@@ -75,21 +75,21 @@ class OrderController extends Controller
                     break;  // break out of this foreach loop
                 }
             }
-        }
 
-        // If don't have, push a new array to the cart session array.
-        if(!$foodExists) {
-            $food = [
-                'id' => $req->id,
-                'name' => $req->name,
-                'price' => $req->price,
-                'picture' => $req->picture,
-                'quantity' => $req->quantity,
-            ];
-            Session::push('cart', $food);
+            // If don't have, push a new array to the cart session array.
+            if(!$foodExists) {
+                $food = [
+                    'id' => $req->id,
+                    'name' => $req->name,
+                    'price' => $req->price,
+                    'picture' => $req->picture,
+                    'quantity' => $req->quantity,
+                ];
+                Session::push('cart', $food);
+            }
+    
+            session()->flash('success', 'added to cart');
         }
-
-        session()->flash('success', 'added to cart');
 
         return '/home';
     }
@@ -133,18 +133,20 @@ class OrderController extends Controller
     }
 
     public function placeOrder(Request $req) {
-        $order = Order::create([
-            'user_id' => Auth::id(),
-            'date' => Carbon::now(),
-            'type' => $req->type,
-            'deliveryAddress' => $req->address,
-        ]);
-        
-        $cart_arr = Session::pull('cart');  // pull: get the value and removes it from the session
-        foreach ($cart_arr as $key => $value) {
-            // $key = 0,1,2,...,n   $value = 'id','name','price',...
-            $food = Food::findOrFail($value['id']);
-            $order->food()->attach($food, ['quantity' => $value['quantity']]);
+        if(Auth::id() != null) {
+            $order = Order::create([
+                'user_id' => Auth::id(),
+                'date' => Carbon::now(),
+                'type' => $req->type,
+                'deliveryAddress' => $req->address,
+            ]);
+            
+            $cart_arr = Session::pull('cart');  // pull: get the value and removes it from the session
+            foreach ($cart_arr as $key => $value) {
+                // $key = 0,1,2,...,n   $value = 'id','name','price',...
+                $food = Food::findOrFail($value['id']);
+                $order->food()->attach($food, ['quantity' => $value['quantity']]);
+            }
         }
         
         return redirect('/order');
