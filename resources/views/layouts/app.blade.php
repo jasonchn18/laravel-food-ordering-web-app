@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <div id="app" class="min-h-screen flex flex-col justify-between">
+    <div id="app" class="min-h-screen flex flex-col">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -133,7 +133,7 @@
             </div>
         </nav>
 
-        <main class="py-4 h-full">
+        <main class="flex-grow py-4 h-full">
             @include('components.flash_message')
             
             @yield('content')
