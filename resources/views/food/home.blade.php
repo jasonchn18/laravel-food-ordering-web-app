@@ -17,19 +17,30 @@ if (session('cart') == null) {
 </div>
 
 <div class="mx-8">
-    <div class="flex flex-row space-x-4">
-        <span class="font-weight-bold sort-font my-auto"> Sort By :</span>
-        <div class="py-1 px-3 border-solid border-1 border-slate-300 rounded-xl text-center bg-white">
-            <a href="/home" class="sort-font">All</a>
+    <div class="flex flex-row">
+        <div class="flex flex-row space-x-4 flex-grow">
+            <span class="font-weight-bold sort-font my-auto"> Filter By :</span>
+            <div class="py-1 px-3 border-solid border-1 border-slate-300 rounded-xl text-center bg-white">
+                <a href="/home" class="sort-font">All</a>
+            </div>
+            <div class="py-1 px-3 border-solid border-1 border-slate-300 rounded-xl text-center bg-white">
+                <a href="../home/Western" class="sort-font">Western</a>
+            </div>
+            <div class="py-1 px-3 border-solid border-1 border-slate-300 rounded-xl text-center bg-white">
+                <a href="../home/Chinese" class="sort-font">Chinese</a>
+            </div>
+            <div class="py-1 px-3 border-solid border-1 border-slate-300 rounded-xl text-center bg-white">
+                <a href="../home/Japanese" class="sort-font">Japanese</a>
+            </div>
         </div>
-        <div class="py-1 px-3 border-solid border-1 border-slate-300 rounded-lg text-center bg-white">
-            <a href="../home/Western" class="sort-font">Western</a>
-        </div>
-        <div class="py-1 px-3 border-solid border-1 border-slate-300 rounded-lg text-center bg-white">
-            <a href="../home/Chinese" class="sort-font">Chinese</a>
-        </div>
-        <div class="py-1 px-3 border-solid border-1 border-slate-300 rounded-lg text-center bg-white">
-            <a href="../home/Japanese" class="sort-font">Japanese</a>
+        <div class="flex flex-row space-x-4 flex-grow justify-end">
+            <span class="font-weight-bold sort-font my-auto"> Order By :</span>
+            <div class="py-1 px-3 border-solid border-1 border-slate-300 rounded-xl text-center bg-white">
+                <a href="{{url()->current().'?asc=true'}}" class="sort-font">Lowest</a>
+            </div>
+            <div class="py-1 px-3 border-solid border-1 border-slate-300 rounded-xl text-center bg-white">
+                <a href="{{url()->current().'?asc=false'}}" class="sort-font">Highest</a>
+            </div>
         </div>
     </div>
 </div>

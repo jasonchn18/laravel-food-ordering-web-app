@@ -13,14 +13,43 @@ class FoodController extends Controller
 {
     public function index()
     {
-        $foods = Food::paginate(12);
+        if (request()->has('asc')) {
+            if (request()->asc == 'true') {
+                $foods = Food::orderBy('price')->paginate(12);
+            }
+            if (request()->asc == 'false') {
+                $foods = Food::orderBy('price', 'DESC')->paginate(12);
+            }
+        } else {
+            $foods = Food::paginate(12);
+        }
         return view('food.home',  ['foods' => $foods]);
     }
+    
     public function filter($type)
     {
+        $foods = Food::where('type', '=', $type);
 
+        if (request()->has('asc')) {
+            if (request()->asc == 'true') {
+                $sorted = $foods->orderBy('price');
+            }
+            if (request()->asc == 'false') {
+                $sorted = $foods->orderBy('price', 'DESC');
+            }
+        } else {
+            $sorted = $foods;        
+        }
+        return view('food.home',  ['foods' => $foods->paginate(12)]);
+    }
 
-        $foods = Food::where('type', '=', $type)->paginate(12);
+    public function sortByPrice($type)
+    {
+        if ($type) {
+            $foods = Food::orderBy('price')->paginate(12);
+        } else {
+            $foods = Food::orderByDesc('price')->paginate(12);
+        }
 
         return view('food.home',  ['foods' => $foods]);
     }
