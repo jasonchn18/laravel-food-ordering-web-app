@@ -15,9 +15,9 @@ class checkAdmin
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, $guard = null)
     {
-        if ($request->user()->isAdmin) {
+        if (Auth::guard($guard)->check() && $request-> user()->isAdmin) {
             return $next($request);
         }
         session()->flash('unauthorized', 'You are not authorized to access');
