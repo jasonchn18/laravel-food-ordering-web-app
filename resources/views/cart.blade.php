@@ -31,39 +31,44 @@
         </div>
     </h1>
 
-    @if (!empty(session('cart')))
-    {{-- Cart --}}
-    @foreach (session('cart') as $food)
-        <div class="px-3 py-2">
-            <div class="flex flex-row px-4 py-3 leading-normal border shadow-md hover:bg-gray-100">
-                <div class="w-full">
-                    <div class="flex flex-col justify-between">
-                        <div class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-full hover:bg-gray-100">
-                            <div class="flex rounded-lg">
-                                <img class="flex h-28 w-44 object-fill rounded-lg" src="{{$food['picture']}}">
-                            </div>
-                            <div class="flex flex-col place-content-center px-4 py-3 leading-normal w-4/6">
-                                <h5 class="flex mb-2 text-2xl font-bold tracking-tight text-gray-900"> {{$food['name']}} </h5>
-                                <p class="flex font-normal text-gray-700"> Quantity: <b>&nbsp;{{$food['quantity']}}</b> </p>
-                                <p class="flex font-normal text-gray-700"> Price: <b>&nbsp;RM{{number_format((float)($food['price']*$food['quantity']), 2, '.', '')}} &ensp;</b> <span class="opacity-60"> [RM{{number_format((float)($food['price']), 2, '.', '')}} per unit] <span> </p>
-                            </div>
-                            <div class="flex justify-center leading-normal w-1/6">
-                                <button onclick="remove_form_action({{$food['id']}})" type="button" class="openRemoveModal text-red-700 font-semibold bg-inherit border-red-500 rounded hover:text-white hover:bg-red-500 hover:border-transparent py-1 px-3 border-2">
-                                    <span> Remove </span>
-                                </button>
+    {{-- Check if cart is not empty --}}
+    @if (count(session('cart')) != 0)
+        {{-- Cart --}}
+        @foreach (session('cart') as $food)
+            <div class="px-3 py-2">
+                <div class="flex flex-row px-4 py-3 leading-normal border shadow-md hover:bg-gray-100">
+                    <div class="w-full">
+                        <div class="flex flex-col justify-between">
+                            <div class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-full hover:bg-gray-100">
+                                <div class="flex rounded-lg">
+                                    <img class="flex h-28 w-44 object-fill rounded-lg" src="{{$food['picture']}}">
+                                </div>
+                                <div class="flex flex-col place-content-center px-4 py-3 leading-normal w-4/6">
+                                    <h5 class="flex mb-2 text-2xl font-bold tracking-tight text-gray-900"> {{$food['name']}} </h5>
+                                    <p class="flex font-normal text-gray-700"> Quantity: <b>&nbsp;{{$food['quantity']}}</b> </p>
+                                    <p class="flex font-normal text-gray-700"> Price: <b>&nbsp;RM{{number_format((float)($food['price']*$food['quantity']), 2, '.', '')}} &ensp;</b> <span class="opacity-60"> [RM{{number_format((float)($food['price']), 2, '.', '')}} per unit] <span> </p>
+                                </div>
+                                <div class="flex justify-center leading-normal w-1/6">
+                                    <button onclick="remove_form_action({{$food['id']}})" type="button" class="openRemoveModal text-red-700 font-semibold bg-inherit border-red-500 rounded hover:text-white hover:bg-red-500 hover:border-transparent py-1 px-3 border-2">
+                                        <span> Remove </span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        @endforeach
+        
+        <div class="flex justify-center">
+            <button type="button" class="openOrderModal shadow leading-tight bg-green-600 text-white text-xl font-semibold rounded-lg m-4 px-12 py-3 text-sm focus:outline-none focus:border-white"> 
+                Place Order 
+            </button>
         </div>
-    @endforeach
-    
-    <div class="flex justify-center">
-        <button type="button" class="openOrderModal shadow leading-tight bg-green-600 text-white text-xl font-semibold rounded-lg m-4 px-12 py-3 text-sm focus:outline-none focus:border-white"> 
-            Place Order 
-        </button>
-    </div>
+    @else
+        <p class="px-4 pt-4 text-lg">
+            Your cart is empty.
+        </p>
     @endif
 
     <!-- Remove item modal -->
@@ -169,10 +174,10 @@
                 </div>
             </div>
         </div>
-      </div>
+    </div>
   
-      <!-- Payment Success Modal -->
-      <div class="invisible flex h-screen overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-0 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="payment-success-modal">
+    <!-- Payment Success Modal -->
+    <div class="invisible flex h-screen overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-0 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="payment-success-modal">
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
         <div class="relative px-4 w-full max-w-md h-full md:h-auto">
             <!-- Modal content -->
@@ -187,9 +192,9 @@
                 <div class="p-6 pt-3 text-center">
                     {{-- <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> --}}
                     <div class="flex justify-center pb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 stroke-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 stroke-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                        </svg>
                     </div>
                     <h3 class="mb-4 text-2xl font-semibold text-gray-600">Payment successful!</h3>
                     {{-- <button data-modal-toggle="popup-modal" type="button" class="closePaymentModal text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
@@ -199,7 +204,10 @@
                 </div>
             </div>
         </div>
-      </div>
+    </div>
+    
+    {{-- Just for some spacing before the end of page (footer) --}}
+    <div class="py-10"></div>
 
     <script type="text/javascript">
         $(document).ready(function () {

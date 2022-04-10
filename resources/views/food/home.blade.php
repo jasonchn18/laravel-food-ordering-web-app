@@ -9,19 +9,21 @@ if (session('cart') == null) {
 
 @section('content')
 
-<div class="mx-16 flex flex-row space-x-4">
-    <span class="font-weight-bold sort-font"> Sort By :</span>
-    <div class="columns-1 w-20 border-solid border-2 border-black rounded-md text-center bg-slate-200">
-        <a href="/home" class="sort-font">All</a>
-    </div>
-    <div class="columns-1 w-20 border-solid border-2 border-black rounded-md text-center bg-slate-200">
-        <a href="../home/Western" class="sort-font">Western</a>
-    </div>
-    <div class="columns-1 w-20 border-solid border-2 border-black rounded-md text-center bg-slate-200">
-        <a href="../home/Chinese" class="sort-font">Chinese</a>
-    </div>
-    <div class="columns-1 w-20 border-solid border-2 border-black rounded-md text-center bg-slate-200">
-        <a href="../home/Japanese" class="sort-font">Japanese</a>
+<div class="mx-8">
+    <div class="flex flex-row space-x-4">
+        <span class="font-weight-bold sort-font"> Sort By :</span>
+        <div class="columns-1 w-20 border-solid border-2 border-black rounded-md text-center bg-slate-200">
+            <a href="/home" class="sort-font">All</a>
+        </div>
+        <div class="columns-1 w-20 border-solid border-2 border-black rounded-md text-center bg-slate-200">
+            <a href="../home/Western" class="sort-font">Western</a>
+        </div>
+        <div class="columns-1 w-20 border-solid border-2 border-black rounded-md text-center bg-slate-200">
+            <a href="../home/Chinese" class="sort-font">Chinese</a>
+        </div>
+        <div class="columns-1 w-20 border-solid border-2 border-black rounded-md text-center bg-slate-200">
+            <a href="../home/Japanese" class="sort-font">Japanese</a>
+        </div>
     </div>
 </div>
 

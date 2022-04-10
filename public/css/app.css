@@ -11844,6 +11844,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 4rem;
   margin-right: 4rem;
 }
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
 .mr-5 {
   margin-right: 1.25rem;
 }
@@ -12057,6 +12065,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .flex-1 {
   flex: 1 1 0%;
+}
+.flex-auto {
+  flex: 1 1 auto;
 }
 .flex-shrink-0 {
   flex-shrink: 0;
