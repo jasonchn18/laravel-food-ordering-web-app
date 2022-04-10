@@ -20,7 +20,7 @@
                         <button class="py-2 px-3 font-bold border-l-2" id="plusBtn">+</button>
                     </div>
                 </div>
-                <button id='addCartBtn' class="p-2 mt-4 bg-blue-600 hover:text-blue-600 text-neutral-50 rounded-md hover:bg-white border-2 border-blue-600 disabled:text-slate-500 disabled:bg-slate-200">Add to Order</button>
+                <button id='addCartBtn' class="p-2 mt-4 bg-blue-600 hover:text-blue-600 text-neutral-50 rounded-md hover:bg-white border-2 border-blue-600 disabled:text-slate-500 disabled:bg-slate-200">Add to Cart</button>
             </div>
         </div>
     </div>
