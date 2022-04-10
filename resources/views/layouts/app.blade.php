@@ -26,8 +26,7 @@
 </head>
 
 <body>
-    <div id="app" class="min-h-screen flex flex-col">
-        {{-- Header --}}
+    <div id="app" class="min-h-screen flex flex-col justify-between">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
