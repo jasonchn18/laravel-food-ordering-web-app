@@ -1,5 +1,5 @@
 @if ($message = Session::get('success'))
-    <div class="alert alert-success alert-block">
+    <div class="alert alert-success alert-block mx-2">
         <div class="flex mx-3">
             <div class="self-center">
                 <strong>{{ $message }}</strong>
@@ -14,7 +14,7 @@
 
 
 @if ($message = Session::get('error'))
-    <div class="alert alert-danger alert-block">
+    <div class="alert alert-danger alert-block mx-2">
         <div class="flex mx-3">
             <div class="self-center">
                 <strong>{{ $message }}</strong>
@@ -29,7 +29,7 @@
 
 
 @if ($message = Session::get('warning'))
-    <div class="alert alert-warning alert-block">
+    <div class="alert alert-warning alert-block mx-2">
         <div class="flex mx-3">
             <div class="self-center">
                 <strong>{{ $message }}</strong>
@@ -44,7 +44,7 @@
 
 
 @if ($message = Session::get('info'))
-    <div class="alert alert-info alert-block">
+    <div class="alert alert-info alert-block mx-2">
         <div class="flex mx-3">
             <div class="self-center">
                 <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
 
 
 {{-- @if ($errors->any())
-    <div class="alert alert-danger">
+    <div class="alert alert-danger mx-2">
         <div class="flex mx-3">
             <div class="self-center">
                 <strong>Please check the form below for errors.</strong>

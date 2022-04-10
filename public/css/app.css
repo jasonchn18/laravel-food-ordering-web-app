@@ -11824,21 +11824,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0px;
   margin-bottom: 0px;
 }
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
-}
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
 }
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.mx-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .mr-5 {
   margin-right: 1.25rem;
@@ -11906,12 +11906,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-auto {
   margin-right: auto;
 }
-.box-border {
-  box-sizing: border-box;
-}
-.mr-4 {
-  margin-right: 1rem;
-}
 .block {
   display: block;
 }
@@ -11968,9 +11962,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-\[70vh\] {
   height: 70vh;
-}
-.h-32 {
-  height: 8rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -12030,9 +12021,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-8\/12 {
   width: 66.666667%;
-}
-.w-32 {
-  width: 8rem;
 }
 .max-w-md {
   max-width: 28rem;
@@ -12148,9 +12136,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.place-self-end {
-  place-self: end;
-}
 .self-start {
   align-self: flex-start;
 }
@@ -12189,9 +12174,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-2 {
   border-width: 2px;
-}
-.border-4 {
-  border-width: 4px;
 }
 .border-b {
   border-bottom-width: 1px;
@@ -12285,6 +12267,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
 }
+.bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
 .bg-blue-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
@@ -12292,14 +12278,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-red-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
-.bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-.bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
@@ -12337,9 +12315,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .p-0 {
   padding: 0px;
-}
-.p-px {
-  padding: 1px;
 }
 .p-8 {
   padding: 2rem;
@@ -12412,6 +12387,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-3 {
   padding-bottom: 0.75rem;
 }
+.pt-4 {
+  padding-top: 1rem;
+}
 .pt-5 {
   padding-top: 1.25rem;
 }
@@ -12435,21 +12413,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pb-10 {
   padding-bottom: 2.5rem;
-}
-.pl-4 {
-  padding-left: 1rem;
-}
-.pr-3 {
-  padding-right: 0.75rem;
-}
-.pr-4 {
-  padding-right: 1rem;
-}
-.pt-4 {
-  padding-top: 1rem;
-}
-.pt-10 {
-  padding-top: 2.5rem;
 }
 .text-left {
   text-align: left;
