@@ -41,6 +41,11 @@ if (session('cart') == null) {
     ***
 </div>
 </div>-->
+
+<div>
+    
+</div>
+
 <div class="mx-8 col-md-12 ">
     <div class="flex flex-row space-x-4">
         <span class="font-weight-bold sort-font"> Sort By :</span>
