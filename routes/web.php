@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 // Route::view('/', 'welcome');
 Route::get('/', [FoodController::class, 'index']);
+//Route::get('/{type}', [FoodController::class, 'filter']);
 // Route::view('/home', 'home');
 Route::view('/addfood', 'food.addfood');
 Auth::routes();
@@ -18,6 +19,7 @@ Route::get('logout', [LoginController::class, 'logout']);
 // food routes with policy
 Route::get('/updatefood/{food}', [FoodController::class, 'getForUpdate']);
 Route::get('/home', [FoodController::class, 'index']);
+Route::get('/home/{type}', [FoodController::class, 'filter']);
 Route::get('/food/viewfood', [FoodController::class, 'adminIndex']);
 Route::post('/food/create', [FoodController::class, 'create']);
 Route::get('/food/{food}', [FoodController::class, 'show']);

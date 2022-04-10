@@ -16,6 +16,14 @@ class FoodController extends Controller
         $foods = Food::paginate(12);
         return view('food.home',  ['foods' => $foods]);
     }
+    public function filter($type)
+    {
+
+
+        $foods = Food::where('type', '=', $type)->paginate(12);
+
+        return view('food.home',  ['foods' => $foods]);
+    }
 
     public function adminIndex()
     {
