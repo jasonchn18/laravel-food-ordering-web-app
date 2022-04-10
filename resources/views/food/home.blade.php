@@ -29,9 +29,9 @@ if (session('cart') == null) {
 
 <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-5">
     @foreach($foods as $data)
-    <div class="rounded-md overflow-hidden shadow-md">
+    <div class="rounded-md overflow-hidden shadow-md border-1 border-gray-100">
         <a class="nav-link" href="../food/{{$data['id']}}">
-            <img class="w-full" src="{{$data['picture']}}" alt="Mountain">
+            <img class="pt-2 h-48 w-full object-cover" src="{{$data['picture']}}" alt="Mountain">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">{{$data['name']}}</div>
                 <p class="text-gray-700 text-base">

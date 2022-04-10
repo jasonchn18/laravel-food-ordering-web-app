@@ -11953,6 +11953,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[70vh\] {
   height: 70vh;
 }
+.h-48 {
+  height: 12rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -12008,6 +12011,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-8\/12 {
   width: 66.666667%;
+}
+.w-40 {
+  width: 10rem;
+}
+.w-48 {
+  width: 12rem;
+}
+.w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 .max-w-md {
   max-width: 28rem;
@@ -12153,6 +12167,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-2 {
   border-width: 2px;
 }
+.border-0 {
+  border-width: 0px;
+}
 .border-b {
   border-bottom-width: 1px;
 }
@@ -12190,6 +12207,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-blue-600 {
   --tw-border-opacity: 1;
   border-color: rgb(37 99 235 / var(--tw-border-opacity));
+}
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
+.border-red-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(248 113 113 / var(--tw-border-opacity));
+}
+.border-gray-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -12264,6 +12293,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .stroke-green-600 {
   stroke: #16a34a;
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .object-fill {
   -o-object-fit: fill;
