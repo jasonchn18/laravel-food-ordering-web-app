@@ -60,9 +60,9 @@ if (session('cart') == null) {
     </div>
     @endforeach
 </div>
-<span class="p-5">
+
+<div class="p-5">
     {{$foods -> links()}}
-</span>
 </div>
 
 <script type="text/javascript">
