@@ -10,7 +10,7 @@
         <table class="p-10 border-collapse border bg-white">
             <thead>
                 <tr>
-                    <th class="border px-2 py-2">No</th>
+                    <th class="border px-2 py-2">ID</th>
                     <th class="border px-2 py-2">Name</th>
                     <th class="border px-2 py-2">Description</th>
                     <th class="border px-2 py-2">Price</th>
