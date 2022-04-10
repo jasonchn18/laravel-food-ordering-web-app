@@ -130,7 +130,7 @@
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
                                     Address:
                                 </label>
-                                <textarea rows="3" class="shadow-sm appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="address_field" name="address" placeholder="124 Conch St., Bikini Bottom, Pacific Ocean"></textarea>
+                                <textarea rows="3" class="resize-none shadow-sm appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="address_field" name="address" placeholder="124 Conch St., Bikini Bottom, Pacific Ocean"></textarea>
                             </div>
                     </div>
                     <div class="px-6 pt-3 border-t">

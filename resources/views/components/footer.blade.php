@@ -2,7 +2,7 @@
     <div >
         <div class="footer card-footer text-center bg-gray-300">
             <!-- <div class="row-cols-sm-2"> -->
-            <h2>Online Food Order Management System</h2>
+            <h2>Foodie</h2>
             <!-- <h1>About the company</h1>
             <p>About the company endguestwo;egn regnq;oenrg;onw aw;oejng;oewng</p> -->
             <!-- </div> -->
@@ -11,8 +11,8 @@
             <p>Contact the company endguestwo;egn regnq;oenrg;onw aw;oejng;oewng</p>
             <!-- </div> -->
             
-            <div class="offset-sm-8">
-                <h1>Originally by Online Food Order Management System</h1>
+            <div class="offset-sm-9">
+                <h1>Originally by Foodie</h1>
             </div>
 
             <div class="row-cols-sm-auto">

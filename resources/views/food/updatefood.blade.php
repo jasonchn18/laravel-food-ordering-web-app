@@ -17,7 +17,7 @@
         <div>
           <label for="food description" class="block text-lg font-medium text-gray-700"> Food Description </label>
           <div class="mt-1">
-            <textarea id="description" name="description" rows="3" class="p-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-lg border border-gray-300 rounded-md" placeholder="Cheeseburger not tasty">{{$food['description']}}</textarea>
+            <textarea id="description" name="description" rows="3" class="resize-none p-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-lg border border-gray-300 rounded-md" placeholder="Cheeseburger not tasty">{{$food['description']}}</textarea>
           </div>
         </div>
 
