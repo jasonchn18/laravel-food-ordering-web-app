@@ -11832,9 +11832,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.75rem;
   margin-right: 0.75rem;
 }
+.mx-16 {
+  margin-left: 4rem;
+  margin-right: 4rem;
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+}
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
+=======
+>>>>>>> Stashed changes
 }
 .mr-5 {
   margin-right: 1.25rem;
@@ -11899,6 +11909,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-auto {
   margin-right: auto;
 }
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
 .block {
   display: block;
 }
@@ -11953,11 +11966,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-8 {
   height: 2rem;
 }
-.h-48 {
-  height: 12rem;
-}
 .h-\[70vh\] {
   height: 70vh;
+}
+.h-48 {
+  height: 12rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -12199,13 +12212,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
-.border-gray-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(243 244 246 / var(--tw-border-opacity));
-}
 .border-blue-600 {
   --tw-border-opacity: 1;
   border-color: rgb(37 99 235 / var(--tw-border-opacity));
+}
+.border-gray-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -12265,13 +12278,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
-.bg-gray-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-}
 .bg-red-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+.bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
@@ -12535,10 +12548,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
-.text-red-800 {
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
-}
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -12554,6 +12563,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;

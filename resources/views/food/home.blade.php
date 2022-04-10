@@ -38,7 +38,7 @@ if (session('cart') == null) {
     @foreach($foods as $data)
     <div class="rounded-md overflow-hidden shadow-md border-1 border-gray-100">
         <a class="nav-link" href="../food/{{$data['id']}}">
-            <img class="pt-2 h-48 w-full object-cover" src="{{$data['picture']}}" alt="Mountain">
+            <img class="pt-2 h-48 w-full object-cover" src="{{$data['picture']}}" alt="Images">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">{{$data['name']}}</div>
                 <p class="text-gray-700 text-base">
@@ -67,7 +67,7 @@ if (session('cart') == null) {
         const modal = document.getElementById('message-modal');
         const content = document.getElementById('message-content');
         const closeBtn = document.getElementById('close');
-        
+
         if (modal.dataset.object != '') {
             modal.classList.remove('hidden');
             content.innerHTML = modal.dataset.object
