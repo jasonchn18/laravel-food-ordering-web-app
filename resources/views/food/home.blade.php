@@ -18,7 +18,7 @@ if (session('cart') == null) {
 
 <div class="mx-8">
     <div class="flex flex-row space-x-4">
-        <span class="font-weight-bold sort-font"> Sort By :</span>
+        <span class="font-weight-bold sort-font my-auto"> Sort By :</span>
         <div class="columns-1 w-20 border-solid border-2 border-black rounded-md text-center bg-slate-200">
             <a href="/home" class="sort-font">All</a>
         </div>
@@ -38,8 +38,8 @@ if (session('cart') == null) {
     @foreach($foods as $data)
     <div class="rounded-md overflow-hidden shadow-md border-1 border-gray-100">
         <a class="nav-link" href="../food/{{$data['id']}}">
-            <img class="pt-2 h-48 w-full object-cover" src="{{$data['picture']}}" alt="Images">
-            <div class="px-6 py-4">
+            <img class="pt-2 h-48 w-full object-cover" src="{{$data['picture']}}" alt="Mountain">
+            <div class="py-4">
                 <div class="font-bold text-xl mb-2">{{$data['name']}}</div>
                 <p class="text-gray-700 text-base">
                     RM {{$data['price']}}
