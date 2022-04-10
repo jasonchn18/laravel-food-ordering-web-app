@@ -56,7 +56,7 @@ class FoodController extends Controller
 
     public function adminIndex()
     {
-        $foods = Food::paginate(10);
+        $foods = Food::orderBy('id','desc')->paginate(10);
         return view('food.viewfood',  ['foods' => $foods]);
     }
 
