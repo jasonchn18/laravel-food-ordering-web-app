@@ -60,6 +60,23 @@
                             <a class="nav-link" href=""><span class="sr-only"></a>
                         </li>
 
+                        @can('isAdmin')
+                            <li class="nav-item active relative">
+                                <a class="nav-link" href="{{ url('food/viewfood') }}">
+                                    <div class="flex" id="navbtnviewfood" aria-describedby="tooltipviewfood" data-tooltip-text="View Food">
+                                        <i class="material-icons">restaurant_menu</i>
+                                        <div class="text-md mt-2 bg-gray-600 text-white absolute rounded bg-opacity-50 shadow-xl hidden top-8 py-1 px-2 whitespace-pre" id="tooltipviewfood">    
+                                        </div>
+                                        <span class="sr-only">
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- disabled link for spacing -->
+                            <li class="nav-item disabled">
+                                <a class="nav-link" href=""><span class="sr-only"></a>
+                            </li>
+                        @endcan
+
                         <li class="nav-item active relative">
                             <a class="nav-link" href="{{ url('order') }}">
                                 <div class="flex" id="navbtnorderhistory" aria-describedby="tooltiporderhistory" data-tooltip-text="Order History">
@@ -155,6 +172,8 @@
         window.addEventListener('DOMContentLoaded', () =>{
             const btnhome = document.querySelector('#navbtnhome');
             const tooltiphome = document.querySelector('#tooltiphome');
+            const btnviewfood = document.querySelector('#navbtnviewfood');
+            const tooltipviewfood = document.querySelector('#tooltipviewfood');
             const btnorderhistory = document.querySelector('#navbtnorderhistory');
             const tooltiporderhistory = document.querySelector('#tooltiporderhistory');
             const btncart = document.querySelector('#navbtncart');
@@ -167,6 +186,16 @@
             btnhome.addEventListener('mouseleave', () => {
                 tooltiphome.classList.add('hidden');
             })
+
+            if(btnviewfood != null) {
+                tooltipviewfood.innerHTML = btnviewfood.dataset.tooltipText
+                btnviewfood.addEventListener('mouseenter', () => {
+                    tooltipviewfood.classList.remove('hidden');
+                })
+                btnviewfood.addEventListener('mouseleave', () => {
+                    tooltipviewfood.classList.add('hidden');
+                })
+            }
 
             tooltiporderhistory.innerHTML = btnorderhistory.dataset.tooltipText
             btnorderhistory.addEventListener('mouseenter', () => {

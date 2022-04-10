@@ -89,13 +89,13 @@ class OrderController extends Controller
                     Session::push('cart', $food);
                 }
 
-                session()->flash('success', 'Successfully added to cart.');
+                Session::flash('success', 'Successfully added to cart.');
             }
 
             return '/home';
         }
         else {
-            session()->flash('info', 'You must be logged in to add to cart and place orders.');
+            Session::flash('info', 'You must be logged in to add to cart and place orders.');
             return '/login';
         }
     }
@@ -135,7 +135,7 @@ class OrderController extends Controller
         // Replace the existing array in the cart session with $new_cart_arr
         Session::put('cart', $new_cart_arr);
         
-        session()->flash('success', 'Successfully removed from cart.');
+        Session::flash('success', 'Successfully removed from cart.');
         return redirect('/cart');
     }
 
@@ -154,7 +154,7 @@ class OrderController extends Controller
             $order->food()->attach($food, ['quantity' => $value['quantity']]);  // attach each food in the cart to the newly created order
         }
         
-        session()->flash('success', 'Successfully placed order.');
+        Session::flash('success', 'Successfully placed order.');
         return redirect('/order');
     }
 }
