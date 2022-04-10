@@ -27,13 +27,6 @@ class FoodController extends Controller
 
     public function adminIndex()
     {
-        // $order = Order::create([
-        //     'user_id' => Auth::id(),
-        //     'date' => Carbon::now(),
-        //     'deliveryAddress' => 'bb',
-        //     'type' => ''
-        // ]);   
-        // Session::put('cart', $order);
         $foods = Food::paginate(10);
         return view('food.viewfood',  ['foods' => $foods]);
     }
@@ -59,12 +52,26 @@ class FoodController extends Controller
 
     public function create(Request $food)
     {
+        $food->validate([
+            'name' => 'required | unique:food',
+            'description' => 'required',
+            'price' => 'required',
+            'type' => 'required',
+            'picture' => 'required'
+        ]);
         Food::create($food->all());
         return redirect('/food/viewfood');
     }
 
     public function update(Request $food, $id)
     {
+        $food->validate([
+            'name' => 'required | unique:food',
+            'description' => 'required',
+            'price' => 'required',
+            'type' => 'required',
+            'picture' => 'required'
+        ]);
         Food::where('id', $id)->update([
             'name' => $food['name'],
             'description' => $food['description'],

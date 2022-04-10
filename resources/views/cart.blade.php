@@ -130,7 +130,10 @@
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
                                     Address:
                                 </label>
-                                <textarea rows="3" class="resize-none shadow-sm appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="address_field" name="address" placeholder="124 Conch St., Bikini Bottom, Pacific Ocean"></textarea>
+                                <textarea rows="3" class="resize-none shadow-sm appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline" id="address" name="address" placeholder="124 Conch St., Bikini Bottom, Pacific Ocean"></textarea>
+                                <span class="">
+                                    <p id="addresserr" class="text-red-600"></p>
+                                </span>
                             </div>
                     </div>
                     <div class="px-6 pt-3 border-t">
@@ -224,13 +227,23 @@
             $('.closeOrderModal').on('click', function(e){
                 $('#order-modal').addClass('invisible');
             });
-
+                
             $('.openPaymentModal').on('click', function(e){
-                $('#payment-modal').removeClass('invisible');
-                setTimeout(function() {
-                    $('#payment-modal').addClass('invisible');
-                    showPaymentSuccess();
-                }, 3000);
+                if (document.getElementById('deliveryType').checked) { 
+                    if(validateForm()) {
+                        $('#payment-modal').removeClass('invisible');
+                        setTimeout(function() {
+                            $('#payment-modal').addClass('invisible');
+                            showPaymentSuccess();
+                        }, 3000);
+                    }
+                } else {
+                    $('#payment-modal').removeClass('invisible');
+                    setTimeout(function() {
+                        $('#payment-modal').addClass('invisible');
+                        showPaymentSuccess();
+                    }, 3000);
+                }
             });
 
             function showPaymentSuccess() {
@@ -244,7 +257,20 @@
             function submitOrderForm() {
                 $('#place-order-form').submit();
             }
+
+            
         });
+
+        function validateForm() {
+            let x = document.forms["place-order-form"]["address"].value;
+            const address = document.querySelector('#addresserr');
+            if (x == "") {
+                console.log(address);
+                address.innerHTML = "Delivery address cannot be empty"
+                return false;
+            }
+            return true;
+        }
 
         function remove_form_action(food_id) {
             $('#remove_form').attr('action', '/cart/remove/' + food_id);

@@ -8,8 +8,13 @@
         <div class="grid grid-cols-3 gap-6">
           <div class="col-span-3 sm:col-span-2">
             <label for="food name" class="block text-lg font-medium text-gray-700"> Food Name </label>
-            <div class="mt-1 flex rounded-md shadow-sm">
-              <input value="{{$food['name']}}" type="text" name="name" id="name" class="p-1 border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-lg border-gray-300" placeholder="Cheeseburger">
+            <div class="mt-1 flex flex-col rounded-md ">
+              <input required value="{{$food['name']}}" type="text" name="name" id="name" class="shadow-sm @error('name') is-invalid @enderror p-1 border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-lg border-gray-300" placeholder="Cheeseburger">
+              @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+              @enderror
             </div>
           </div>
         </div>
@@ -17,14 +22,24 @@
         <div>
           <label for="food description" class="block text-lg font-medium text-gray-700"> Food Description </label>
           <div class="mt-1">
-            <textarea id="description" name="description" rows="3" class="resize-none p-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-lg border border-gray-300 rounded-md" placeholder="Cheeseburger not tasty">{{$food['description']}}</textarea>
+            <textarea required id="description" name="description" rows="3" class="@error('description') is-invalid @enderror resize-none p-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-lg border border-gray-300 rounded-md" placeholder="Cheeseburger not tasty">{{$food['description']}}</textarea>
+            @error('description')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
         </div>
 
         <div>
           <label for="food price" class="block text-lg font-medium text-gray-700"> Food Price </label>
-          <div class="mt-1 flex rounded-md shadow-sm">
-              <input value="{{$food['price']}}" type="number" name="price" id="price" class="p-1 border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-lg border-gray-300" placeholder="20.00">
+          <div class="mt-1 flex flex-col rounded-md">
+              <input required value="{{$food['price']}}" type="number" name="price" id="price" class="shadow-sm @error('price') is-invalid @enderror p-1 border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-lg border-gray-300" placeholder="20.00">
+              @error('price')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+              @enderror
             </div>
         </div>
 
@@ -41,9 +56,14 @@
 
         <div class="mt-3">
           <label for="food price" class="block text-lg font-medium text-gray-700"> Food Photo Link </label>
-          <div class="mt-1 flex rounded-md shadow-sm">
-              <input value="{{$food['picture']}}" type="text" name="picture" id="picture" class="p-1 border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-lg border-gray-300" placeholder="https://www.google.com/">
-            </div>
+          <div class="mt-1 flex flex-col rounded-md">
+            <input required value="{{$food['picture']}}" type="text" name="picture" id="picture" class="shadow-sm @error('picture') is-invalid @enderror p-1 border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-lg border-gray-300" placeholder="https://www.google.com/">
+            @error('picture')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+          </div>
         </div>  
       </div>
       <div class="px-4 py-3 text-right sm:px-6">
