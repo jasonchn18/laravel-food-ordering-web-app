@@ -20,7 +20,7 @@ class checkAdmin
         if (Auth::guard($guard)->check() && $request-> user()->isAdmin) {
             return $next($request);
         }
-        session()->flash('unauthorized', 'You are not authorized to access');
+        session()->flash('unauthorized', 'You are not authorized to access the page '.$request->path());
         return redirect('../home');
     }
 }
