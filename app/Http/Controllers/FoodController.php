@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\Rule;
 
 class FoodController extends Controller
 {
@@ -95,7 +96,10 @@ class FoodController extends Controller
     public function update(Request $food, $id)
     {
         $food->validate([
-            'name' => 'required | unique:food',
+            'name' => [
+                'required',
+                 Rule::unique('food')->ignore($id),
+            ],
             'description' => 'required',
             'price' => 'required',
             'type' => 'required',
