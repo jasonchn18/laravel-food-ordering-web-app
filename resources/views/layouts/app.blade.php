@@ -29,7 +29,7 @@
     <div id="app" class="min-h-screen flex flex-col">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand font-bold text-xl" href="{{ url('/') }}">
                     <!-- {{ config('app.name', 'Foodie') }} -->
                     {{ __('Foodie') }}
                 </a>
