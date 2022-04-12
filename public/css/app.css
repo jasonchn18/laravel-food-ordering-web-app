@@ -11832,14 +11832,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.75rem;
   margin-right: 0.75rem;
 }
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-.my-auto {
-  margin-top: auto;
-  margin-bottom: auto;
-}
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -11847,6 +11839,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
+}
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .mr-5 {
   margin-right: 1.25rem;
@@ -11863,8 +11863,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-4 {
   margin-bottom: 1rem;
 }
-.mb-3 {
-  margin-bottom: 0.75rem;
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 .mr-1 {
   margin-right: 0.25rem;
@@ -11875,8 +11875,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-2 {
   margin-right: 0.5rem;
 }
-.mb-1 {
-  margin-bottom: 0.25rem;
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 .ml-1 {
   margin-left: 0.25rem;
@@ -11905,6 +11905,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-0 {
   margin-bottom: 0px;
 }
+.mr-3 {
+  margin-right: 0.75rem;
+}
+.ml-3 {
+  margin-left: 0.75rem;
+}
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -11913,12 +11919,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mr-auto {
   margin-right: auto;
-}
-.mr-3 {
-  margin-right: 0.75rem;
-}
-.ml-3 {
-  margin-left: 0.75rem;
 }
 .block {
   display: block;
@@ -11980,20 +11980,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[70vh\] {
   height: 70vh;
 }
-.max-h-\[80\%\] {
-  max-height: 80%;
-}
-.max-h-\[90\%\] {
-  max-height: 90%;
+.max-h-\[96\%\] {
+  max-height: 96%;
 }
 .max-h-\[\] {
   max-height: ;
-}
-.max-h-\[95\%\] {
-  max-height: 95%;
-}
-.max-h-\[96\%\] {
-  max-height: 96%;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -12057,9 +12048,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .min-w-\[50\%\] {
   min-width: 50%;
 }
-.min-w-\[40\%\] {
-  min-width: 40%;
-}
 .max-w-md {
   max-width: 28rem;
 }
@@ -12074,9 +12062,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .max-w-\[60\%\] {
   max-width: 60%;
-}
-.max-w-\[50\%\] {
-  max-width: 50%;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -12166,6 +12151,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-5 {
   gap: 1.25rem;
 }
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -12175,11 +12165,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-}
-.space-x-3 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .place-self-center {
   place-self: center;
@@ -12715,13 +12700,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
-.hover\:text-blue-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity));
-}
 .hover\:text-blue-700:hover {
   --tw-text-opacity: 1;
   color: rgb(29 78 216 / var(--tw-text-opacity));
+}
+.hover\:text-blue-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 .focus\:z-10:focus {
   z-index: 10;
