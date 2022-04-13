@@ -5,7 +5,7 @@
   @csrf
     <div class="shadow sm:rounded-md sm:overflow-hidden">
       <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
-        <div class="grid grid-cols-3 gap-6">
+        <div>
           <div class="col-span-3 sm:col-span-2">
             <label for="food name" class="block text-lg font-medium text-gray-700"> Food Name </label>
             <div class="mt-1 flex flex-col rounded-md ">
