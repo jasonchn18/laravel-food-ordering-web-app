@@ -62,7 +62,7 @@ if (session('cart') == null) {
 </div>
 
 <div class="p-5">
-    {{$foods -> links()}}
+    {{$foods -> appends(request()->input()) ->  links()}}
 </div>
 
 <script type="text/javascript">
