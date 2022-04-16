@@ -38,6 +38,7 @@ Route::post('/cart/placeorder', [OrderController::class, 'placeOrder']);
 
 Route::post('/user/edit', [UserController::class, 'update']);
 Route::get('/user/edit', [UserController::class, 'updateView']);
+Route::delete('/user/{user}', [UserController::class, 'delete']);
 
 
 

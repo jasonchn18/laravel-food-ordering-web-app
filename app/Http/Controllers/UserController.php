@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Order;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,5 +41,21 @@ class UserController extends Controller
             return redirect('../home');
         }
         return view('editUser');
+    }
+
+    public function delete($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+        $orders = Order::where('user_id', $id)->get();
+        // For each food in the order:
+        foreach ($orders as $order) {
+            foreach ($order->food as $food){
+                // Remove from pivot table
+                $order->food()->detach($food->id);
+            }
+            $order->delete();
+        }
+        return redirect('logout');
     }
 }
