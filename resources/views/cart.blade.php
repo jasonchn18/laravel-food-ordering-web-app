@@ -120,9 +120,9 @@ if (!empty(session('cart'))) {
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="type">
                             Order Type:
                         </label>
-                        <div class="columns-2 gap-3 w-fit">
-                            <div class=""> <input type="radio" name="type" id="pickupType" value="pickup" onclick="showAddressField()" checked> Pickup </div>
-                            <div class=""> <input type="radio" name="type" id="deliveryType" value="delivery" onclick="showAddressField()"> Delivery </div>
+                        <div class="columns-2 gap-2 w-fit">
+                            <div><label> <input type="radio" name="type" id="pickupType" value="pickup" onclick="showAddressField()" checked> Pickup </label></div>
+                            <div><label> <input type="radio" name="type" id="deliveryType" value="delivery" onclick="showAddressField()"> Delivery </label></div>
                         </div>
                     </div>
                     <div class="hidden" id="address_div">
