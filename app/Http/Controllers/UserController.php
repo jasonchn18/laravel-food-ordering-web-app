@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Order;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 
 class UserController extends Controller
@@ -40,7 +38,8 @@ class UserController extends Controller
             session()->flash('unauthorized', 'You are not authorized to access the page ' . request()->path());
             return redirect('../home');
         }
-        return view('editUser');
+        $user = User::findOrFail(Auth::id());
+        return view('editUser', ['user' => $user]);
     }
 
     public function delete($id)

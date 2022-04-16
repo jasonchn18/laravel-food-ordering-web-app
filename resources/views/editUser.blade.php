@@ -9,7 +9,7 @@
           <div class="col-span-3 sm:col-span-2">
             <label for="food name" class="block text-lg font-medium text-gray-700"> Name </label>
             <div class="mt-1 flex flex-col rounded-md">
-              <input required type="text" name="name" id="name" class="shadow-sm @error('name') is-invalid @enderror p-1 border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-lg border-gray-300" placeholder="Cheeseburger">
+              <input required type="text" value="{{$user['name']}}" name="name" id="name" class="shadow-sm @error('name') is-invalid @enderror p-1 border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-lg border-gray-300" placeholder="Cheeseburger">
               @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -23,8 +23,8 @@
         <div>
           <label for="food description" class="block text-lg font-medium text-gray-700"> Email </label>
           <div class="mt-1">
-            <input required id="description" name="email" type="email" class="@error('email') is-invalid @enderror resize-none p-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-lg border border-gray-300 rounded-md" placeholder="example@email.com">
-            @error('email')
+            <input required id="description" value="{{$user['email']}}" name="email" type="email" class="@error('email') is-invalid @enderror resize-none p-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-lg border border-gray-300 rounded-md" placeholder="example@email.com">
+            @error('email') 
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
               </span>
@@ -35,7 +35,7 @@
         <div>
           <label for="food price" class="block text-lg font-medium text-gray-700"> Address</label>
           <div class="mt-1 flex flex-col rounded-md">
-              <textarea required name="address" id="price" rows="3"  class="shadow-sm @error('address') resize-none is-invalid @enderror p-1 border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-lg border-gray-300" placeholder="Sesame Street"></textarea>
+              <textarea required name="address" id="price" rows="3"  class="shadow-sm @error('address') resize-none is-invalid @enderror p-1 border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-lg border-gray-300" placeholder="Sesame Street">{{$user['address']}}</textarea>
               @error('address')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
