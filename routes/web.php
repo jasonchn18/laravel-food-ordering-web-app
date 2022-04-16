@@ -27,7 +27,7 @@ Route::post('/food/addfood', [FoodController::class, 'create']);
 
 // Order routes
 Route::get('order', [OrderController::class, 'show']);
-Route::delete('/order/{order_id}/{food_id}', [OrderController::class, 'destroy']);
+Route::delete('/order/{order_id}', [OrderController::class, 'destroy']);
 
 // Cart routes
 Route::view('cart', 'cart');

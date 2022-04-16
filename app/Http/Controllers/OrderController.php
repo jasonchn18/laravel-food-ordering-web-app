@@ -39,10 +39,16 @@ class OrderController extends Controller
         return view('order', ['orders' => $orders]);
     }
 
-    public function destroy($order_id, $food_id)
+    public function destroy($id)
     {
-        $order = Order::findOrFail($order_id);
-        $order->food()->detach($food_id);
+        $order = Order::findOrFail($id);
+        // For each food in the order:
+        foreach ($order->food as $food){
+            // Remove from pivot table
+            $order->food()->detach($food->id);
+        }
+        $order->delete();
+        // $order->food()->detach($food_id);
         return redirect('/order');
     }
 
