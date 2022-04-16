@@ -167,8 +167,8 @@
                     </ul>
                 </div>
             </div>
-            <!-- Remove item modal -->
-            <div class="invisible flex h-screen overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="remove-modal">
+            <!-- Remove user modal -->
+            <div class="invisible flex h-screen overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="remove-user-modal">
                 <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
                 <div class="relative px-4 w-full max-w-md h-full md:h-auto">
                     <!-- Modal content -->
@@ -213,7 +213,7 @@
         window.addEventListener('DOMContentLoaded', () =>{
             const btnDeleteUser = document.querySelector('#deleteuser');
             const btncancelDelete = document.querySelector('#canceldelete');
-            const removeModal = document.querySelector('#remove-modal');
+            const removeModal = document.querySelector('#remove-user-modal');
             const btnhome = document.querySelector('#navbtnhome');
             const tooltiphome = document.querySelector('#tooltiphome');
             const btnviewfood = document.querySelector('#navbtnviewfood');
