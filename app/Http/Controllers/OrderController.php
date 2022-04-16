@@ -49,6 +49,7 @@ class OrderController extends Controller
         }
         $order->delete();
         // $order->food()->detach($food_id);
+        Session::flash('success', 'Successfully deleted order from order history.');
         return redirect('/order');
     }
 
