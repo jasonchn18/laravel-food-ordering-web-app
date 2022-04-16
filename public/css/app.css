@@ -11881,9 +11881,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-1 {
   margin-top: 0.25rem;
 }
-.mt-3 {
-  margin-top: 0.75rem;
-}
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -11916,6 +11913,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .ml-3 {
   margin-left: 0.75rem;
+}
+.mt-3 {
+  margin-top: 0.75rem;
 }
 .mr-auto {
   margin-right: auto;

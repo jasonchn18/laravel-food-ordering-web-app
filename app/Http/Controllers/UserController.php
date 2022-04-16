@@ -29,6 +29,7 @@ class UserController extends Controller
             'address' => $user['address'],
         ]);
 
+        Session::flash('success', 'Successfully edited the user.');
         return redirect('/home');
     }
 
@@ -55,6 +56,7 @@ class UserController extends Controller
             }
             $order->delete();
         }
+        Session::flash('success', 'Successfully deleted your account.');
         return redirect('logout');
     }
 }
