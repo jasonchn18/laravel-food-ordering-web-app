@@ -156,7 +156,7 @@
                                     @csrf
                                 </form>
                                 <a class="dropdown-item" href="{{ route('logout') }}">
-                                    {{ __('Logout') }}
+                                    {{ __('User Settings') }}
                                 </a>
                             </div>
                         </li>
