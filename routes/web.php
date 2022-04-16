@@ -7,10 +7,7 @@ use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-// Route::view('/', 'welcome');
 Route::get('/', [FoodController::class, 'index']);
-//Route::get('/{type}', [FoodController::class, 'filter']);
-// Route::view('/home', 'home');
 Auth::routes();
 
 Route::get('logout', [LoginController::class, 'logout']);
@@ -37,6 +34,8 @@ Route::view('cart', 'cart');
 Route::post('/addToCart', [OrderController::class, 'updateCart']);
 Route::delete('/cart/remove/{food_id}', [OrderController::class, 'removeFromCart']);
 Route::post('/cart/placeorder', [OrderController::class, 'placeOrder']);
+
+Route::get('/editUser', [OrderController::class, 'placeOrder']);
 
 
 
