@@ -26,7 +26,7 @@ class ChangeDeliveryAddressColumnToNullableInOrderTable extends Migration
     public function down()
     {
         Schema::table('order', function (Blueprint $table) {
-            $table->string('deliveryAddress')->nullable(false)->change();
+            $table->string('deliveryAddress')->change();
         });
     }
 }
