@@ -7,7 +7,35 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Online Food Order Management System
+
+A web-based food ordering system built on Laravel with MySQL database and CRUD operations.
+
+## User Module
+### Home
+<img width="914" alt="Home" src="public\images\screenshots\home.png" style="margin-bottom: 15px;">
+
+### Food Details
+<img width="914" alt="Food Details" src="public\images\screenshots\food_details.png" style="margin-bottom: 15px;">
+
+### Cart
+<img width="914" alt="Cart" src="public\images\screenshots\cart.png" style="margin-bottom: 15px;">
+
+### Order History
+<img width="914" alt="Order History" src="public\images\screenshots\order_history.png" style="margin-bottom: 15px;">
+
+## Admin Module
+### View Food
+<img width="914" alt="Admin View Food" src="public\images\screenshots\admin_view_food.png" style="margin-bottom: 15px;">
+
+### Add Food
+<img width="914" alt="Admin Add Food" src="public\images\screenshots\admin_add_food.png" style="margin-bottom: 15px;">
+
+### Update Food
+<img width="914" alt="Admin Update Food" src="public\images\screenshots\admin_update_food.png" style="margin-bottom: 15px;">
+
+
+<!-- ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
@@ -61,4 +89,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
